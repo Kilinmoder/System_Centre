@@ -4,20 +4,25 @@
 <meta charset="utf-8">
 <title>施工中!</title>
 </head>
-
+<body>
 <h1>
     刚创建文件夹,知道你很急,但你先别急
 </h1> 
 
 <script>
+    var ipAddress;
     fetch('https://api.ipify.org?format=json')
       .then(response => response.json())
       .then(data => {
-        document.getElementById('ipAddress').innerHTML = "您的IP为: " + data.ip+"  您的IP已被记录!!";
+        ipAddress = "您的IP为: " + data.ip+"  您的IP已被记录!!";
+        document.getElementById('ipAddress').innerHTML = ipAddress;
       })
       .catch(error => console.error('Unable to get IP address:', error));
-  </script>
-  
-  <footer>
-  <p id="ipAddress"></p>
-  </footer>
+
+</script>
+
+<p id="ipAddress"></p>
+
+
+</body>
+</html>

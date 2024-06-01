@@ -20,12 +20,17 @@ p {
     font-size: 90%;
 }
 
+
+
 footer {
     text-align: center;
     padding: 3px;
     background-color: DarkSalmon;
     color: white;
     margin-top: 15px;
+    position: absolute;
+    bottom: 0;  /* 4. 设置页脚position为absolute之后，再将其bottom值设为0，即可使其处于页面的底部 */
+    width: 100%;
 }
 
 h1 {
@@ -33,6 +38,7 @@ h1 {
     text-align: center;
     display: flex;
     justify-content: center;
+	color: #D37676
 }
 
 
@@ -245,8 +251,44 @@ h1 {
 .h2 {
     position: relative;
     width: 500px;
-    left: 500px;
+    left: 10px;
 }
 body {
-     background-color: #FCE8F8;
+     background-image: url(https://hefollo.com/apis.php?type=电脑端-4K图片/4K动漫壁纸);
+     background-size:100%;
+}
+body {margin: 0;}
+
+ul.topnav {
+    list-style-type: none;
+    padding-left: 880px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255,0);
+    margin: 0;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #AD88C6;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+h3 {
+    position: relative;
+    text-align: center;
+    color: #ffffff;
 }

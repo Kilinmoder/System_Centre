@@ -25,32 +25,17 @@ footer {
     padding: 3px;
     background-color: DarkSalmon;
     color: white;
-    margin-top: 830px;
+    margin-top: 15px;
 }
 
-/* 响应式设计 */
-@media (max-width: 600px) {
-    footer {
-        margin-top: 20px;
-    }
-
-    h1 {
-        font-size: 1.2em;
-        text-align: center;
-    }
-
-    .deng-box2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .deng,
-    .shui {
-        width: 80%;
-    }
+h1 {
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
+
+
 
 .ct2 .mn {
     width: 770px;
@@ -69,7 +54,7 @@ footer {
 .deng-box {
     position: fixed;
     top: -40px;
-    right: 150px;
+    right: 120px;
     z-index: 9999;
     pointer-events: none;
 }
@@ -77,7 +62,7 @@ footer {
 .deng-box1 {
     position: fixed;
     top: -30px;
-    right: 10px;
+    right: 40px;
     z-index: 9999;
     pointer-events: none
 }
@@ -85,7 +70,7 @@ footer {
 .deng-box2 {
     position: fixed;
     top: -40px;
-    left: 150px;
+    left: 120px;
     z-index: 9999;
     pointer-events: none
 }
@@ -93,7 +78,7 @@ footer {
 .deng-box3 {
     position: fixed;
     top: -30px;
-    left: 10px;
+    left: 40px;
     z-index: 9999;
     pointer-events: none
 }
@@ -257,7 +242,8 @@ footer {
         -webkit-transform: rotate(-10deg)
     }
 }
-h1 {
-    display: flex;
-    justify-content: center;
-  }
+.h2 {
+    position: relative;
+    width: 500px;
+    left: 500px;
+}

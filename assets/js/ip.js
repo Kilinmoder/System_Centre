@@ -4,20 +4,10 @@ fetch('https://api.ipify.org?format=json')
   .then(data => {
     ipAddress = "您的IP为: " + data.ip + " | 欢迎访问本网站";
     document.getElementById('ipAddress').innerHTML = ipAddress;
+    console.log("IP地址获取成功加载!");
   })
   .catch(error => console.error('Unable to get IP address:', error));
 
-  function createSakura() {
-    var sakura = document.createElement("div");
-    sakura.className = "sakura";
-    sakura.style.left = Math.random() * 100 + "vw";
-    sakura.style.animationDelay = Math.random() * 5 + "s";
-    document.body.appendChild(sakura);
-
-    setTimeout(function () {
-        sakura.remove();
-    }, 10000);
-}
 function secondToDate(second) {
   if (!second) {
       return 0;
@@ -52,4 +42,7 @@ function setTime() {
           + currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4]
           + '秒';
   document.getElementById("htmer_time").innerHTML = currentTimeHtml;
-}    setInterval(setTime, 1000);
+  console.log("网站运行时间获取正常!")
+}    
+setInterval(setTime, 1000);
+    

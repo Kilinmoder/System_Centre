@@ -45,4 +45,12 @@ function setTime() {
   console.log("网站运行时间获取正常!")
 }    
 setInterval(setTime, 1000);
-    
+
+var yiyanapi;
+fetch('https://v1.hitokoto.cn/')
+  .then(response => response.json())
+  .then(data => {
+    yiyanapi =  data.hitokoto + "---" + data.from;
+    document.getElementById('yiyanapi').innerHTML = yiyanapi;
+    console.log("一言API成功加载!");
+  })

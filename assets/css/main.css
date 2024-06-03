@@ -3429,7 +3429,7 @@ body.is-preload #header.alt {
     -ms-transition-delay: .75s;
     transition-delay: .75s;
     pointer-events: none;
-    background-color: #062d3060;
+    background-color: #0c6e7560;
     content: '';
     display: block;
     height: 100%;

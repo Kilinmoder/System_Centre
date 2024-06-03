@@ -46,11 +46,18 @@ function setTime() {
 }    
 setInterval(setTime, 1000);
 
-var yiyanapi;
-fetch('https://v1.hitokoto.cn/')
-  .then(response => response.json())
-  .then(data => {
-    yiyanapi =  data.hitokoto + "---" + data.from;
-    document.getElementById('yiyanapi').innerHTML = yiyanapi;
-    console.log("一言API成功加载!");
-  })
+document.addEventListener('DOMContentLoaded', function() {
+  const apiUrl = 'https://v1.hitokoto.cn/';
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+  fetch(proxyUrl + apiUrl)
+      .then(response => response.json())
+      .then(data => {
+          const yiyanapi = data.hitokoto + "---" + data.from;
+          document.getElementById('yiyanapi').innerHTML = yiyanapi;
+          console.log("一言API成功加载!");
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
+});

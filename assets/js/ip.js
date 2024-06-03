@@ -1,3 +1,6 @@
+window.alert("播放器因浏览器限制,未自动播放请点开播放器手动播放！");
+
+
 var ipAddress;
 fetch('https://api.ipify.org?format=json')
   .then(response => response.json())

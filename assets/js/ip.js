@@ -46,18 +46,19 @@ function setTime() {
 }    
 setInterval(setTime, 1000);
 
-document.addEventListener('DOMContentLoaded', function() {
-  const apiUrl = 'https://v1.hitokoto.cn/';
-  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-
-  fetch(proxyUrl + apiUrl)
-      .then(response => response.json())
-      .then(data => {
-          const yiyanapi = data.hitokoto + "---" + data.from;
+        // 回调函数，用于处理 JSONP 返回的数据
+        function handleJSONPResponse(data) {
+          const parsedData = typeof data === 'string' ? JSON.parse(data) : data;
+          const yiyanapi = parsedData.hitokoto + " --- " + parsedData.from;
           document.getElementById('yiyanapi').innerHTML = yiyanapi;
           console.log("一言API成功加载!");
-      })
-      .catch(error => {
-          console.error('Error fetching data:', error);
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+          // 创建一个 script 标签
+          const script = document.createElement('script');
+          // 设置 src 属性，包含 API URL 和回调参数
+          script.src = 'https://v1.hitokoto.cn/?callback=handleJSONPResponse';
+          // 将 script 标签插入到文档中
+          document.body.appendChild(script);
       });
-});

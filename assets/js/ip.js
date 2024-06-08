@@ -64,14 +64,3 @@ setInterval(setTime, 1000);
           // 将 script 标签插入到文档中
           document.body.appendChild(script);
       });
-document.addEventListener("visibilitychange", function() {
-        if (document.visibilityState === "hidden") {
-          // 页面变成了后台标签页
-          // 停止音频的播放
-          document.getElementById("myAudio").pause();
-        } else {
-          // 页面变成了活动标签页
-          // 继续音频的播放
-          document.getElementById("myAudio").play();
-        }
-      });
